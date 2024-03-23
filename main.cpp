@@ -81,6 +81,7 @@ public:
     double getBalance() {
         return currentAccount->getBalance();
     }
+
     void changeMoney(int amount)
     {
         currentAccount->addMoney(amount);
