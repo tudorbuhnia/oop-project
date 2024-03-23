@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 class Account {
@@ -8,7 +9,6 @@ private:
     string pin;
     double balance;
 public:
-    //Account(const string &accountNumber, const string &pin, double balance) : accountNumber(accountNumber), pin(pin), balance(balance) {}
     Account(const string& accountNumber, const string& pin,const double& balance)
     {
         this->accountNumber = accountNumber;
@@ -47,6 +47,11 @@ public:
     {
         out << aux.balance;
         return out;
+    }
+    friend istream& operator>>(istream& in, Account &aux)
+    {
+        in >> aux.accountNumber;
+        return in;
     }
     ~Account() = default;
 };
@@ -93,7 +98,8 @@ void menu2();
 int main()
 {
     ATM atm;
-    atm.addAccount(Account("777","1234",1000));
+    atm.addAccount(Account("10000000","0007",5000));
+    atm.addAccount(Account("12345678","1234",1000));
 
     int opt1=0,opt2=0,amount;
     string accountNumber,pin;
@@ -148,6 +154,7 @@ int main()
                                 //atm.getBalance2();
                                 break;
                             case 4:
+                                cout << endl << "Card removed" << endl;
                                 break;
                             default:
                                 cout << "Invalid option" << endl;
