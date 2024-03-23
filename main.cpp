@@ -81,9 +81,6 @@ public:
     double getBalance() {
         return currentAccount->getBalance();
     }
-    void getBalance2() {
-        cout << *currentAccount << endl;
-    }
     void changeMoney(int amount)
     {
         currentAccount->addMoney(amount);
