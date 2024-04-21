@@ -190,6 +190,7 @@ int main()
     atm.addAccount(new SavingsAccount("10000001","1111",1500,5));
     atm.addAccount(new KidsAccount("10000002","1111",1600,500));
 
+
     int opt1=0,opt2=0,amount;
     string accountNumber,pin;
     do
