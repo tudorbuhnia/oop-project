@@ -70,15 +70,15 @@ public:
     {
         this->interestRate = aux.interestRate;
     }
-    void addInterest() {
-        balance += balance * (interestRate / 100);
-    }
+//    void addInterest() {
+//        balance += balance * (interestRate / 100);
+//    }
     void details() const override
     {
         cout << "Savings account." << endl;
         cout << "Interest rate: " << interestRate << "%" << endl;
     };
-    ~SavingsAccount() = default;
+    ~SavingsAccount() override = default;
 };
 class KidsAccount : public Account {
 private:
@@ -95,16 +95,16 @@ public:
         cout << "Child account." << endl;
         cout << "Withdraw limit: " << withdrawLimit << " RON" << endl;
     };
-    void resetLimit(){
-        withdrawCnt = 0;
-    }
+//    void resetLimit(){
+//        withdrawCnt = 0;
+//    }
     double withdrawLeft() const{
         return withdrawLimit-withdrawCnt;
     }
     void cntIncrease(const double& n){
         withdrawCnt+=n;
     }
-    ~KidsAccount() = default;
+    ~KidsAccount() override = default;
 };
 
 class ATM {
