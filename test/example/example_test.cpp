@@ -34,6 +34,10 @@ TEST(SuiteName, atmtest){
     EXPECT_EQ(atm.login("1234","1111"), true);
     atm.selectAccount("1234");
     EXPECT_EQ(atm.getBalance(), 2000);
+    atm.deposit(500);
+    EXPECT_EQ(atm.getBalance(), 2500);
+    atm.withdraw(600);
+    EXPECT_EQ(atm.getBalance(), 1900);
 }
 
 TEST(SuiteName, TestName) {
